@@ -18,7 +18,7 @@
   </head>
 
   <body>
-    <div class="overlay">
+    <!-- <div class="overlay"> -->
       <header class="menu-top">
         <div class="container">
           <div class="container-menu">
@@ -66,7 +66,7 @@
             <div class="conteiner-vision-section">
             <h1 class="vision">EFEKTYWNE ROZWIĄZANIA <br />
               DLA WASZEGO BIZNESU</h1>
-            <button type="button" class="button-main">
+            <button type="button" class="button-main" data-modal-open>
               <span>Zamów usługe</span>
             </div>
           </div>
@@ -478,7 +478,17 @@
         </div>
       </div>
       </footer>
-    </div>
+
+      <div class="backdrop is-hidden" data-modal>
+        <div class="modal">
+          <button class="button-modal-close" data-modal-close>
+            <svg class="close-icon" width="30" height="30">
+              <use href="./images/icons.svg#x"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+
     <script src="./js/modal.js"></script>
   </body>
 </html>
