@@ -91,6 +91,7 @@ body {
   line-height: 16px;
   letter-spacing: 0.02em;
   color: var(--header-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .li-address {
   display: flex;
@@ -106,6 +107,7 @@ body {
   line-height: 16px;
   letter-spacing: 0.02em;
   color: var(--grey);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .listed-menu-link:hover,
@@ -118,6 +120,18 @@ body {
 .header-icon {
   margin-right: 10px;
   fill: currentColor;
+}
+
+.current-page::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 4px;
+  bottom: 0px;
+  left: 0;
+  background-color: var(--blue);
+  transform: translateY(29px);
+  border-radius: 2px;
 }
 
 /* vision */
@@ -256,14 +270,30 @@ body {
   padding: 94px, 215px;
 }
 
-.service-img {
-  padding-bottom: 94px;
+.services .li-services > li {
+  position: relative;
+}
+
+.service-description {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  bottom: 3px;
+  width: 100%;
+  padding: 27px 0px;
+  font-weight: 700;
+  line-height: 16px;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--white);
+  background-color: rgba(47, 48, 58, 0.8);
 }
 
 /* team */
 .team {
   background-color: #f5f4fa;
-  padding: 94px 0;
+  padding-bottom: 94px;
 }
 
 .team-list {
@@ -287,7 +317,7 @@ body {
   text-align: center;
   letter-spacing: 0.03em;
   color: var(--header-color);
-  padding-bottom: 94px;
+  padding: 94px 0;
 }
 
 .name {
@@ -319,9 +349,11 @@ body {
   justify-content: center;
 }
 
-/* .team-list-item-socialmedia-link {
+.team-list-item-socialmedia-link {
   display: flex;
-} */
+  justify-content: center;
+  align-items: center;
+}
 
 .icon-socialmedia {
   width: 44px;
@@ -330,8 +362,8 @@ body {
   border-radius: 50%;
   background-color: var(--white);
   fill: #afb1b8;
-  justify-content: center;
-  align-items: center;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .icon-socialmedia:focus,
@@ -362,6 +394,7 @@ body {
   color: #afb1b8;
   border: 1px solid rgba(175, 177, 184, 1);
   fill: #afb1b8;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .icon-client:focus,
@@ -398,8 +431,8 @@ body {
   line-height: 24px;
   /* or 171% */
   letter-spacing: 0.03em;
-
   color: rgba(255, 255, 255, 0.6);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-link:hover,
@@ -436,6 +469,7 @@ body {
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.1);
   fill: var(--white);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .icon-socialmedia-footer:hover,
@@ -463,19 +497,20 @@ body {
   /* identical to box height, or 162% */
   text-align: center;
   letter-spacing: 0.03em;
-
   color: var(--header-color);
   width: 121px;
   height: 38px;
   left: 961px;
   top: 174px;
-
   background: #f5f4fa;
   border-radius: 4px;
   border: none;
   gap: 30px;
   margin-top: 100px;
   margin-bottom: 50px;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .portfolio-button:focus,
 .portfolio-button:hover {
@@ -497,6 +532,7 @@ body {
 .li-item {
   background: var(--white);
   border: 1px solid #eeeeee;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .li-item:focus,
@@ -504,6 +540,30 @@ body {
   cursor: pointer;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
+.item-switch {
+  position: relative;
+  overflow: hidden;
+}
+.item-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 49px 45px 49px 24px;
+  font-size: 18px;
+  line-height: 1.56;
+  color: var(--white);
+  background-color: rgba(33, 150, 243, 0.9);
+  transform: translateY(101%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.li-item:hover .item-text,
+.li-item:focus .item-text {
+  transform: translateY(0%);
 }
 
 .portfolio-box {
