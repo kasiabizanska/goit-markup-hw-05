@@ -267,7 +267,7 @@ body {
   flex-direction: row;
   gap: 30px;
   justify-content: center;
-  padding: 94px, 215px;
+  /* padding: 94px, 215px; */
 }
 
 .services .li-services > li {
@@ -293,7 +293,7 @@ body {
 /* team */
 .team {
   background-color: #f5f4fa;
-  padding-bottom: 94px;
+  padding: 94px 0;
 }
 
 .team-list {
@@ -317,7 +317,7 @@ body {
   text-align: center;
   letter-spacing: 0.03em;
   color: var(--header-color);
-  padding: 94px 0;
+  padding-bottom: 50px;
 }
 
 .name {
